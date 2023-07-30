@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class Maze : MonoBehaviour
@@ -61,7 +62,7 @@ public class Maze : MonoBehaviour
             walker.Setup(delta, startPosition, maze, Direction.N, compass);
         }
         btnStart.interactable = btnReset.interactable = !walking;
-        btnWalk.GetComponentInChildren<Text>().text = (walking ? "Exit" : "Walk");
+        btnWalk.GetComponentInChildren<TMP_Text>().text = (walking ? "Exit" : "Walk");
 
         walker.gameObject.SetActive(walking);
         mainCam.SetActive(!walking);
